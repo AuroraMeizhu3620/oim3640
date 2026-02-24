@@ -6,10 +6,11 @@ data_path = Path("data.json")
 
 def load_data():
     if data_path.exists():
-        return json.loads(DATA_PATH.read_text(encoding="utf-8"))
-    return {
-        "students": [],
-        "seats": [],
-        "assignments": {},   # seat_id -> student_id
-        "sessions": []       # list of session dicts
-    }
+        return json.loads(data_path.read_text(encoding="utf-8")) # reading numbers as text
+    else:
+        return {
+            "students": [],
+            "seats": [],
+            "assignments": {},   # seat_id -> student_id
+            "sessions": []       # list of session dicts
+        }
