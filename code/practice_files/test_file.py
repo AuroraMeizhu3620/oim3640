@@ -19,3 +19,9 @@ def triangle(n,character):
 
 triangle(5,"#")
          
+def has_digit(s):
+    for c in s:
+        if c.isdigit():
+            return True
+        else:
+            return False
