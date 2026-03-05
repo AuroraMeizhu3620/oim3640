@@ -38,7 +38,7 @@ def find_words(letters, required_letter):
     with open("data/words.txt") as word_file:
         for word in word_file:
             word = word.strip()
-            if use_only(word, letters) and must_use(word, required) and length(word):
+            if use_only(word, letters) and must_use(word, required_letter) and length(word):
                 print(word) 
 
 
