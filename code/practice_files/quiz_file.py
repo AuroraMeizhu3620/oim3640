@@ -20,3 +20,12 @@ def triangle(n,character):
 triangle(5,"#")
          
 
+def count_vowels(s):
+    count = 0
+    for c in s:
+        if c in 'aeiou':
+            count += 1
+            return count
+        return count
+
+print(count_vowels('apple'))
