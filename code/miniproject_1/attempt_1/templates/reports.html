@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="two-column">
+  <article class="panel">
+    <h2>Scoring Settings</h2>
+    <form method="post" class="form-grid">
+      <label>Attendance Weight<input type="number" name="attendance_weight" min="0" max="100" value="{{ settings.attendance_weight }}"></label>
+      <label>Participation Weight<input type="number" name="participation_weight" min="0" max="100" value="{{ settings.participation_weight }}"></label>
+      <button type="submit">Save Weights</button>
+    </form>
+    <p class="helper-text">Weights do not need to total 100, but that is the easiest grading model to explain.</p>
+  </article>
+
+  <article class="panel">
+    <h2>Session History</h2>
+    {% if sessions %}
+      <ol>
+        {% for session in sessions %}
+          <li>{{ session.date }}{% if session.notes %}: {{ session.notes }}{% endif %}</li>
+        {% endfor %}
+      </ol>
+    {% else %}
+      <p>No sessions recorded yet.</p>
+    {% endif %}
+  </article>
+</section>
+
+<section class="panel">
+  <h2>Student Summary</h2>
+  {% if rows %}
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Attendance</th>
+            <th>Participation</th>
+            <th>Attendance %</th>
+            <th>Participation %</th>
+            <th>Weighted Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in rows %}
+            <tr>
+              <td>{{ row.name }}</td>
+              <td>{{ row.attendance_present }} / {{ row.attendance_total }}</td>
+              <td>{{ row.participation_total }}</td>
+              <td>{{ "%.0f"|format(row.attendance_pct * 100) }}%</td>
+              <td>{{ "%.0f"|format(row.participation_pct * 100) }}%</td>
+              <td>{{ "%.1f"|format(row.weighted_score) }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <p>No report data yet. Add students and record at least one session.</p>
+  {% endif %}
+</section>
+{% endblock %}

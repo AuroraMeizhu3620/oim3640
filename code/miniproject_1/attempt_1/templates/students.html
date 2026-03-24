@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="two-column">
+  <article class="panel">
+    <h2>Add Student</h2>
+    <form method="post" class="form-grid">
+      <label>First Name<input type="text" name="first" required></label>
+      <label>Middle Name<input type="text" name="middle"></label>
+      <label>Last Name<input type="text" name="last" required></label>
+      <label>Email<input type="email" name="email"></label>
+      <button type="submit">Add Student</button>
+    </form>
+  </article>
+
+  <article class="panel">
+    <h2>Roster</h2>
+    {% if students %}
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for student in students %}
+              <tr>
+                <td>{{ student.first }} {% if student.middle %}{{ student.middle }} {% endif %}{{ student.last }}</td>
+                <td>{{ student.email or "Not set" }}</td>
+                <td>
+                  <form method="post" action="{{ url_for('delete_student', student_id=student.id) }}">
+                    <button type="submit" class="button-muted">Delete</button>
+                  </form>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p>No students added yet.</p>
+    {% endif %}
+  </article>
+</section>
+{% endblock %}

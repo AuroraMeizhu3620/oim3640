@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-card">
+  <div>
+    <p class="eyebrow">Project overview</p>
+    <h2>Manage seating, attendance, participation, and grading history in one place.</h2>
+  </div>
+  <p class="hero-copy">This version stores class data locally in JSON and exports an Excel workbook for grading.</p>
+</section>
+
+<section class="card-grid">
+  <article class="stat-card">
+    <p class="stat-label">Students</p>
+    <p class="stat-value">{{ summary.student_count }}</p>
+  </article>
+  <article class="stat-card">
+    <p class="stat-label">Seats</p>
+    <p class="stat-value">{{ summary.seat_count }}</p>
+  </article>
+  <article class="stat-card">
+    <p class="stat-label">Sessions</p>
+    <p class="stat-value">{{ summary.session_count }}</p>
+  </article>
+  <article class="stat-card">
+    <p class="stat-label">Assigned Seats</p>
+    <p class="stat-value">{{ summary.assigned_seat_count }}</p>
+  </article>
+</section>
+
+<section class="two-column">
+  <article class="panel">
+    <h3>Suggested workflow</h3>
+    <ol>
+      <li>Add your roster.</li>
+      <li>Create the classroom layout.</li>
+      <li>Assign students to seats.</li>
+      <li>Record attendance and participation after each class.</li>
+      <li>Review weighted scores and export to Excel.</li>
+    </ol>
+  </article>
+  <article class="panel">
+    <h3>Version 1 focus</h3>
+    <ol>
+      <li>Persistent student roster.</li>
+      <li>Reusable seating chart.</li>
+      <li>Session-by-session attendance and participation history.</li>
+      <li>Weighted report generation.</li>
+      <li>Excel export for grading.</li>
+    </ol>
+  </article>
+</section>
+{% endblock %}

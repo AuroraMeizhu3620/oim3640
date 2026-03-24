@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="two-column">
+  <article class="panel">
+    <h2>Create Layout</h2>
+    <form method="post" class="form-grid">
+      <input type="hidden" name="action" value="generate">
+      <label>Rows<input type="number" name="rows" min="1" value="{{ layout.rows }}"></label>
+      <label>Columns<input type="number" name="cols" min="1" value="{{ layout.cols }}"></label>
+      <button type="submit">Update Layout</button>
+    </form>
+  </article>
+
+  <article class="panel">
+    <h2>Current Layout</h2>
+    <p>{{ layout.rows }} rows by {{ layout.cols }} columns</p>
+    <p>{{ seats|length }} seats available.</p>
+  </article>
+</section>
+
+<section class="panel">
+  <h2>Assign Students to Seats</h2>
+  {% if seats %}
+    <form method="post">
+      <input type="hidden" name="action" value="assign">
+      <div class="seat-grid" style="grid-template-columns: repeat({{ layout.cols }}, minmax(140px, 1fr));">
+        {% for seat in seats %}
+          <label class="seat-card">
+            <span class="seat-label">{{ seat.label }}</span>
+            <select name="seat_{{ seat.id }}">
+              <option value="">Unassigned</option>
+              {% for student in students %}
+                <option value="{{ student.id }}" {% if assignments.get(seat.id) == student.id %}selected{% endif %}>
+                  {{ student.last }}, {{ student.first }}
+                </option>
+              {% endfor %}
+            </select>
+          </label>
+        {% endfor %}
+      </div>
+      <button type="submit">Save Assignments</button>
+    </form>
+  {% else %}
+    <p>Create a seating layout first.</p>
+  {% endif %}
+</section>
+{% endblock %}
