@@ -5,7 +5,7 @@
 **Why I chose this:** I remember needing to find and analyze quotes with a specific word in it during highschool for an essay on the Great Gatsby. For example, green, gold, and glasses were repeated motifs. It would have been so helpful if I could 
 
 **Core features:**
-- text_loade: Turn the book into a list of strings based on spaces " "
+- text_load: Turn the book into a list of strings based on spaces " "
 - text_search: Search for specific words in that string
 - sentence_compile: Return the string
 - page_number: Return the nearest page number
