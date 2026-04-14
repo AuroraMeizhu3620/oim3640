@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from stocks import get_price
 
 app = Flask(__name__)
@@ -23,11 +23,20 @@ def square(n):
     return render_template("square.html", n=n, square=result)
 
 @app.route("/stocks/<ticker>")
-def stock_price(ticker):
+def stock(ticker):
     price = get_price(ticker)
-    return render_template("stock.html", ticker=ticker, price=price)
+    return f"The current price of {ticker.upper()} is ${price:.2f}"
 
-    
+@app.get("/ticker")
+def ticker():
+    return render_template("stockform.html")
+
+@app.post("/ticker")
+def ticker_post():
+    ticker = request.form.get("symbol")
+    price = get_price(ticker)
+    return f"The current price of {ticker.upper()} is ${price:.2f}"
+
 if __name__ == "__main__":
     app.run(debug=True)
 
