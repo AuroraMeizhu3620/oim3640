@@ -2,4 +2,3 @@ flask
 yfinance
 gunicorn
 python-dotenv
-os
