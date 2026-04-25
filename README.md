@@ -1,5 +1,6 @@
-# OIM3640-2026SPR
-This is my course repository for OIM3640 problem solving software.
+# OIM3640 Portfolio – Aurora Wu  
+### Problem Solving Through Software | SPR 2026 | Babson College
+A collection of coding projects focused on automation, data, and real-world problem solving.
 
 ## About Me
 - Name: Aurora (Meizhu) Wu
@@ -10,3 +11,7 @@ This is my course repository for OIM3640 problem solving software.
 
 # My Projects
 - [First Project](./projects/project1) #project folder in the same repo
+
+## Third Project
+Blurb:
+- [Third Projcet: Green MBTA App](https://github.com/AuroraMeizhu3620/mp3_greenmbta_app)
