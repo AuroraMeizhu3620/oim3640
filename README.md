@@ -30,9 +30,15 @@ Hi, I'm Aurora (Meizhu) Wu, a student at Babson College concentrating in Economi
 </p>
 
 - [First Project](./projects/project1) 
-- [Third Projcet: Green MBTA App](https://github.com/AuroraMeizhu3620/mp3_greenmbta_app)
-  
-- 
+
+### 🚇 Third Project: Green MBTA App
+
+**Description**  
+A Flask-based web application that helps users: Find the nearest MBTA station and decide whether the users should walk to the station based on local air quality, promoting eco-friendly choices.
+
+**Links**  
+- 🔗 [GitHub Repository](https://github.com/AuroraMeizhu3620/mp3_greenmbta_app)  
+- 🌐 **[Live App](https://oim3640-4tu4.onrender.com/)**  
 
 ## What I Learned
 - How to structure coding projects from idea → implementation
