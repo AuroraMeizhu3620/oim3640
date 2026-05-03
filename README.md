@@ -17,18 +17,6 @@ Hi, I'm Aurora (Meizhu) Wu, a student at Babson College concentrating in Economi
 ## Projects
 ## Projects
 
-<p align="center">
-  <img src="https://via.placeholder.com/300x200?text=Project+1" width="30%" />
-  <img src="https://via.placeholder.com/300x200?text=Project+2" width="30%" />
-  <img src="https://via.placeholder.com/300x200?text=Project+3" width="30%" />
-</p>
-
-<p align="center">
-  <b>Project 1</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Project 2</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Project 3</b>
-</p>
-
 - [First Project](./projects/project1) 
 
 ### 🚇 Third Project: Green MBTA App
